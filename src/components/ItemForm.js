@@ -5,7 +5,7 @@ function ItemForm({ onItemFormSubmit }) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("Produce");
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const newItem = {
       id: uuid(),
@@ -13,9 +13,9 @@ function ItemForm({ onItemFormSubmit }) {
       category: category,
     };
     onItemFormSubmit(newItem);
-    setName(""); // clear input after submit
-    setCategory("Produce"); // reset dropdown
-  }
+    setName(""); // Clear input after submission
+    setCategory("Produce"); // Reset to default
+  };
 
   return (
     <form className="NewItem" onSubmit={handleSubmit}>
